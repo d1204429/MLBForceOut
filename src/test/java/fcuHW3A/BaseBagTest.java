@@ -1,4 +1,4 @@
-package fcu;
+package fcuHW3A;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -26,4 +26,20 @@ class baseBagTest {
     baseBag = new BaseBag(true, false, true);
     assertEquals("一、三壘有人 可封殺壘包 : 1B, 2B", baseBag.getForceOutStatus());
   }
+
+
+//  assertThrows(預期的異常類別.class, () -> {
+//    可能拋出異常的程式碼
+//  });
+//  這個方法會在程式執行時拋出預期的異常類別，如果沒有拋出預期的異常類別，則會拋出AssertionError。
+
+  @Test
+  void testException(){
+    assertThrows(NullPointerException.class, () -> {
+      BaseBag baseBag = null;
+      baseBag.getForceOutStatus();
+    });
+  }
+
+
 }
